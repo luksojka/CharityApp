@@ -37,6 +37,8 @@ public class Donation {
 
     private String pickUpComment;
 
+    private String phone;
+
     public Donation() {
 
     }
@@ -119,5 +121,13 @@ public class Donation {
 
     public void setPickUpComment(String pickUpComment) {
         this.pickUpComment = pickUpComment;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

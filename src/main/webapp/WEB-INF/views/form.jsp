@@ -38,7 +38,7 @@
     <div class="form--steps-container">
         <div class="form--steps-counter">Krok <span>1</span>/4</div>
 
-        <form:form action="form-confirmation.html" method="post" modelAttribute="donation" id="donationForm">
+        <form:form method="post" modelAttribute="donation" id="donationForm">
             <!-- STEP 1: class .active is switching steps -->
             <div data-step="1" class="active">
                 <h3>Zaznacz co chcesz oddać:</h3>
@@ -46,22 +46,12 @@
                 <c:forEach items="${categories}" var="category">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <input id="step1categories" type="checkbox" name="${category.name}" value="${category.id}"/>
+                            <input id="step1categories" type="checkbox" name="categories" value="${category.id}" title="${category.name}"/>
                             <span class="checkbox"></span>
                             <span class="description"> ${category.name} </span>
                         </label>
                     </div>
                 </c:forEach>
-
-                    <%--                <c:forEach items="${categories}" var="category">--%>
-                    <%--                    <div class="form-group form-group--checkbox">--%>
-                    <%--                        <label>--%>
-                    <%--                            <form:checkbox cssClass="checkbox" path="categories" value="${category.id}"/>--%>
-                    <%--                            <span class="checkbox"></span>--%>
-                    <%--                            <span class="description"> ${category.name} </span>--%>
-                    <%--                        </label>--%>
-                    <%--                    </div>--%>
-                    <%--                </c:forEach>--%>
 
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn next-step">Dalej</button>
@@ -79,13 +69,6 @@
                     </label>
                 </div>
 
-                    <%--                <div class="form-group form-group--inline">--%>
-                    <%--                    <label>--%>
-                    <%--                        Liczba 60l worków:--%>
-                    <%--                        <input type="number" name="bags" step="1" min="1"/>--%>
-                    <%--                    </label>--%>
-                    <%--                </div>--%>
-
                 <div class="form-group form-group--buttons">
                     <button type="button" class="btn prev-step">Wstecz</button>
                     <button type="button" class="btn next-step">Dalej</button>
@@ -100,7 +83,7 @@
                 <c:forEach items="${institutions}" var="institution">
                     <div class="form-group form-group--checkbox">
                         <label>
-                            <input id="step3institution" type="radio" name="${institution.name}" value="${institution.id}"/>
+                            <input id="step3institution" type="radio" name="institution" value="${institution.id}" title="${institution.name}"/>
                             <span class="checkbox radio"></span>
                             <span class="description">
                   <div class="title">${institution.name}</div>
@@ -185,7 +168,7 @@
 
                             <li>
                                 <span class="icon icon-hand"></span>
-                                <span class="summary--text"
+                                <span id="summaryInstitution" class="summary--text"
                                 >Dla fundacji "Mam marzenie" w Warszawie</span
                                 >
                             </li>
@@ -196,19 +179,19 @@
                         <div class="form-section--column">
                             <h4>Adres odbioru:</h4>
                             <ul>
-                                <li>Prosta 51</li>
-                                <li>Warszawa</li>
-                                <li>99-098</li>
-                                <li>123 456 789</li>
+                                <li id="summaryStreet">Prosta 51</li>
+                                <li id="summaryCity">Warszawa</li>
+                                <li id="summaryZipCode">99-098</li>
+                                <li id="summaryPhone">123 456 789</li>
                             </ul>
                         </div>
 
                         <div class="form-section--column">
                             <h4>Termin odbioru:</h4>
                             <ul>
-                                <li>13/12/2018</li>
-                                <li>15:40</li>
-                                <li>Brak uwag</li>
+                                <li id="summaryDate">13/12/2018</li>
+                                <li id="summaryTime">15:40</li>
+                                <li id="summaryComment">Brak uwag</li>
                             </ul>
                         </div>
                     </div>

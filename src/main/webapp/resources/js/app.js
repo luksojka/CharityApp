@@ -166,12 +166,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             var selectedCategories = new Array();
             $('#step1categories:checked').each(function () {
-                selectedCategories.push($(this).attr('name'));
+                selectedCategories.push($(this).attr('title'));
             });
 
 
             const quantity = $('#step2quantity').val();
-            const institution = $('#step3institution:checked').attr('name');
+            const institution = $('#step3institution:checked').attr('title');
             const street = $('#step4street').val();
             const city = $('#step4city').val();
             const zipCode = $('#step4zipCode').val();
@@ -179,6 +179,26 @@ document.addEventListener("DOMContentLoaded", function () {
             const pickUpDate = $('#step4pickUpDate').val();
             const pickUpTime = $('#step4pickUpTime').val();
             const pickUpComment = $('#step4pickUpComment').val();
+
+            if (quantity < 2) {
+                $('#summaryQuantity').text(quantity + " worek z produktami z kategorii: " + selectedCategories);
+            } else if (quantity < 5) {
+                $('#summaryQuantity').text(quantity + " worki z produktami z kategorii: " + selectedCategories);
+            } else {
+                $('#summaryQuantity').text(quantity + " worków z produktami z kategorii: " + selectedCategories);
+            }
+
+            $('#summaryInstitution').text(institution)
+            $('#summaryStreet').text(street)
+            $('#summaryCity').text(city)
+            $('#summaryZipCode').text(zipCode)
+            $('#summaryPhone').text(phone)
+            $('#summaryDate').text(pickUpDate)
+            $('#summaryTime').text(pickUpTime)
+
+            if (pickUpComment != "") {
+                $('#summaryComment').text(pickUpComment)
+            }
 
             // console.log(selectedCategories);
             // console.log(quantity);
@@ -188,8 +208,8 @@ document.addEventListener("DOMContentLoaded", function () {
             // console.log("Kod pocztowy " + zipCode);
             // console.log("Data " + pickUpDate);
             // console.log("Czas " + pickUpTime);
-
             // TODO: get data from inputs and show them in summary
+
         }
 
     }
