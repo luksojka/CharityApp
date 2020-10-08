@@ -27,4 +27,8 @@ public class DonationService {
         }
         return total;
     }
+
+    public Donation addDonation(Donation donation) {
+        return donationRepository.save(donation);
+    }
 }
