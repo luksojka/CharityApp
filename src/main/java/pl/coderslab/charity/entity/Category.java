@@ -1,10 +1,16 @@
 package pl.coderslab.charity.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @Entity
+@NoArgsConstructor
+@Getter
+@Setter
 public class Category {
 
     @Id
@@ -14,23 +20,4 @@ public class Category {
     @NotNull
     private String name;
 
-    public Category() {
-
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }
