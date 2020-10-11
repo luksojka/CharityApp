@@ -200,14 +200,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 $('#summaryComment').text(pickUpComment)
             }
 
-            // console.log(selectedCategories);
-            // console.log(quantity);
-            // console.log(institution);
-            // console.log("Ulica " + street);
-            // console.log("Miasto " + city);
-            // console.log("Kod pocztowy " + zipCode);
-            // console.log("Data " + pickUpDate);
-            // console.log("Czas " + pickUpTime);
             // TODO: get data from inputs and show them in summary
 
         }
