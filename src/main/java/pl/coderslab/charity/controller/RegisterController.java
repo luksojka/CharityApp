@@ -18,9 +18,6 @@ public class RegisterController {
 
     private final UserService userService;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
     @GetMapping(path = "/register")
     public String showRegistrationForm(Model model) {
         User user = new User();
@@ -29,16 +26,13 @@ public class RegisterController {
     }
 
     @PostMapping(path = "/register")
-    public String userRegistration (@ModelAttribute("user") User user, BindingResult bindingResult) {
+    public String userRegistration(@ModelAttribute("user") User user, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "register";
         } else {
-            String encodedPassword = passwordEncoder.encode(user.getPassword());
-            user.setPassword(encodedPassword);
             userService.registerUser(user);
         }
         return "redirect:/";
-
     }
 
     @ModelAttribute("user")
