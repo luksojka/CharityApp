@@ -12,7 +12,7 @@
     <artifactId>charity</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>charity</name>
-    <description>Charity project, created with love in CodersLab</description>
+    <description>Charity project created to show how donations could be addressed to foundations</description>
 
     <properties>
         <java.version>1.8</java.version>
@@ -31,7 +31,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>

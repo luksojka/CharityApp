@@ -5,9 +5,9 @@ INSERT INTO institution(name, description) VALUES ('Fundacja 4', 'Misja cel 5');
 INSERT INTO institution(name, description) VALUES ('Fundacja piąta', 'Misja cel numer pięć');
 INSERT INTO institution(name, description) VALUES ('Fundacja szósta', 'Misja cel numer sześć');
 
-INSERT INTO donation(city, phone, pick_up_comment, pick_up_date, pick_up_time, quantity,street, zip_code, institution_id) VALUES ('Warszawa', '123456789' , 'brak uwag', '2020-10-20' , 17, 2, 'ulica1', 00-001, 1);
-INSERT INTO donation(city, phone, pick_up_comment, pick_up_date, pick_up_time, quantity,street, zip_code, institution_id) VALUES ('Poznań','532856293', 'uwaga1', '2020-11-01', 18 ,1, 'ulica2', 01-029,1);
-INSERT INTO donation(city, phone, pick_up_comment, pick_up_date, pick_up_time, quantity,street, zip_code, institution_id) VALUES ('Piaseczno', '918374823', 'uwaga2', '2020-11-10', 19, 3, 'ulica3', 03-999,4);
+INSERT INTO donation(city, phone, pick_up_comment, pick_up_date, pick_up_time, quantity,street, zip_code, institution_id) VALUES ('Warszawa', '123456789' , 'brak uwag', '2020-10-20' , 17, 2, 'ulica1', '00-001', 1);
+INSERT INTO donation(city, phone, pick_up_comment, pick_up_date, pick_up_time, quantity,street, zip_code, institution_id) VALUES ('Poznań','532856293', 'uwaga1', '2020-11-01', 18 ,1, 'ulica2', '01-029',1);
+INSERT INTO donation(city, phone, pick_up_comment, pick_up_date, pick_up_time, quantity,street, zip_code, institution_id) VALUES ('Piaseczno', '918374823', 'uwaga2', '2020-11-10', 19, 3, 'ulica3', '03-999',4);
 
 INSERT INTO category(name) VALUES ('zabawki');
 INSERT INTO category(name) VALUES ('gry');

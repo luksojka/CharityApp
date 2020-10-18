@@ -1,5 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html lang="pl">
@@ -16,21 +15,23 @@
 
 <section class="login-page">
     <h2>Zaloguj się</h2>
-    <form:form method="post" modelAttribute="user">
+    <form method="post">
         <div class="form-group">
-            <form:input path="username" placeholder="Email" />
+            <input type="email" id="username" name="username" placeholder="Email" />
         </div>
         <div class="form-group">
-            <form:password path="password" placeholder="Hasło" />
+            <input type="password" id="password" name="password" placeholder="Hasło" />
             <a href="#" class="btn btn--small btn--without-border reset-password">Przypomnij hasło</a>
         </div>
         <div class="form-group form-group--buttons">
             <a href="/register" class="btn btn--without-border">Załóż konto</a>
+            <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
             <button class="btn" type="submit">Zaloguj się</button>
         </div>
-    </form:form>
+    </form>
 </section>
 
 <jsp:include page="footer.jsp"/>
+
 </body>
 </html>
